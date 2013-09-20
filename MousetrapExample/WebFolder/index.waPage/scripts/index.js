@@ -7,7 +7,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var saveBrandButton = {};	// @button
 	var documentEvent = {};	// @document
 // @endregion// @endlock
-var brandEmptyStatus = true;
+var brandEmptyStatus = false;
+
 function deleteBrand(){
 	sources.brand.removeCurrent();
 }
@@ -33,7 +34,7 @@ function duplicateBrand(){
 function checkBrandEmpty(){
 	if(sources.brand.length == 0 && brandEmptyStatus == false){
 		$$("brandContainer").disable();
-	} else if(sources.brand.length > 0 && brandEmptyStatus == true) {
+	} else if(sources.brand.length > 0 && brandEmptyStatus == false) {
 		$$("brandContainer").enable();
 	}
 }
